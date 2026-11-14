@@ -1,0 +1,33 @@
+<!doctype html>
+<html lang="pt-BR">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!--
+      SEO: título, descrição, Open Graph, JSON-LD e o conteúdo <noscript> NÃO ficam aqui.
+      Eles são gerados a partir de src/data/profile.ts → seo (plugin "portfolio-seo"
+      em vite.config.ts), para nunca ficarem diferentes do conteúdo do site.
+    -->
+    <meta name="theme-color" content="#070d1b" />
+    <meta name="color-scheme" content="dark" />
+    <!-- Evita o clarão branco antes de o CSS carregar -->
+    <style>
+      html {
+        background: #070d1b;
+      }
+    </style>
+
+    <link rel="icon" type="image/png" href="/images/brand/favicon.png" />
+    <link rel="apple-touch-icon" href="/images/brand/apple-touch-icon.png" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Geist:wght@400..600&family=Geist+Mono:wght@400;500&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+  <body>
+    <div id="root"></div>
+    <script type="module" src="/src/main.tsx"></script>
+  </body>
+</html>

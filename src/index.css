@@ -1,0 +1,130 @@
+@import 'tailwindcss';
+
+/* ============================================================
+   TEMA — altere as cores e fontes do site inteiro aqui
+   ============================================================ */
+@theme {
+  /* Azul-marinho: fundo, superfícies e linhas */
+  --color-bg: #070d1b;
+  --color-surface: #0c1526;
+  --color-surface-2: #121d33;
+  --color-line: #1c2942;
+  --color-line-strong: #34466b;
+
+  /* Texto (todos passam em contraste AA sobre bg e surface) */
+  --color-fg: #eaf0f9;
+  --color-muted: #a3b0c6;
+  --color-subtle: #7c8ba8;
+
+  /* Azul da marca, extraído do monograma EC */
+  --color-accent: #2a6fd6;
+  --color-accent-soft: #7fb0f5;
+
+  --font-sans: 'Geist', ui-sans-serif, system-ui, -apple-system, 'Segoe UI', sans-serif;
+  --font-mono: 'Geist Mono', ui-monospace, SFMono-Regular, Menlo, monospace;
+
+  --ease-out-expo: cubic-bezier(0.16, 1, 0.3, 1);
+
+  /* Entrada suave para trocas de imagem (classe animate-fade-in) */
+  --animate-fade-in: fade-in 0.3s ease-out;
+  @keyframes fade-in {
+    from {
+      opacity: 0;
+    }
+  }
+}
+
+@layer base {
+  html {
+    /* Escala fluida: 16px até ~1536px de largura e cresce até 20px em telas
+       ultrawide. Como espaçamentos e larguras usam rem, o layout inteiro
+       acompanha em vez de ficar ilhado no centro. */
+    font-size: clamp(100%, 0.5rem + 0.52vw, 125%);
+    scroll-behavior: smooth;
+    scroll-padding-top: 5.5rem;
+    /* Reserva o espaço da barra de rolagem: abrir menu/modal não desloca a página */
+    scrollbar-gutter: stable;
+    -webkit-text-size-adjust: 100%;
+    text-size-adjust: 100%;
+  }
+  body {
+    background: var(--color-bg);
+    color: var(--color-fg);
+    font-family: var(--font-sans);
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    text-rendering: optimizeLegibility;
+  }
+  ::selection {
+    background: color-mix(in srgb, var(--color-accent) 45%, transparent);
+    color: #fff;
+  }
+  :focus-visible {
+    outline: 2px solid var(--color-accent-soft);
+    outline-offset: 3px;
+  }
+  @media (prefers-reduced-motion: reduce) {
+    html {
+      scroll-behavior: auto;
+    }
+    *,
+    ::before,
+    ::after {
+      animation-duration: 0.01ms !important;
+      animation-iteration-count: 1 !important;
+      transition-duration: 0.01ms !important;
+    }
+  }
+}
+
+@layer components {
+  .container-x {
+    width: 100%;
+    max-width: 78rem;
+    margin-inline: auto;
+    padding-inline: 1.25rem;
+  }
+  @media (min-width: 48rem) {
+    .container-x {
+      padding-inline: 2.5rem;
+    }
+  }
+
+  /* Rótulo técnico: índices, categorias, datas e títulos de coluna */
+  .label {
+    font-family: var(--font-mono);
+    font-size: 0.75rem;
+    line-height: 1rem;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    color: var(--color-subtle);
+  }
+
+  /* Canto chanfrado das fotografias — o mesmo corte diagonal do monograma EC.
+     O tamanho do corte pode ser ajustado com a variável --chamfer. */
+  .chamfer {
+    clip-path: polygon(
+      0 0,
+      100% 0,
+      100% calc(100% - var(--chamfer, 1.5rem)),
+      calc(100% - var(--chamfer, 1.5rem)) 100%,
+      0 100%
+    );
+  }
+
+  /* Placeholder editável — destaca textos entre [COLCHETES] */
+  .placeholder-text {
+    color: var(--color-accent-soft);
+    background: color-mix(in srgb, var(--color-accent) 12%, transparent);
+    border-bottom: 1px dashed color-mix(in srgb, var(--color-accent-soft) 60%, transparent);
+    border-radius: 2px;
+    padding-inline: 0.15em;
+    box-decoration-break: clone;
+    -webkit-box-decoration-break: clone;
+  }
+
+  .scrollbar-thin {
+    scrollbar-width: thin;
+    scrollbar-color: var(--color-line-strong) transparent;
+  }
+}
