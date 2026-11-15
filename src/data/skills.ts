@@ -22,21 +22,21 @@ export const skillCategories: SkillCategory[] = [
     title: 'Frontend',
     description:
       'Desenvolvimento de interfaces modernas, responsivas e intuitivas, com foco na experiência do usuário, componentização e integração com APIs.',
-    items: ['React.js', 'JavaScript / TypeScript', 'HTML5 / CSS3', 'Flutter'],
+    items: ['React.js', 'React Native / Expo', 'JavaScript / TypeScript', 'HTML5 / CSS3', 'Flutter'],
   },
   {
     id: 'backend',
     title: 'Backend',
     description:
       'Desenvolvimento de aplicações e serviços backend, com foco em regras de negócio, arquitetura, APIs REST, autenticação e integração entre sistemas.',
-    items: ['Java / Spring Boot', 'Node.js', 'TypeScript', 'APIs REST / JWT'],
+    items: ['Java / Spring Boot', 'Go', 'Node.js', 'TypeScript', 'APIs REST / JWT'],
   },
   {
     id: 'database',
     title: 'Banco de dados',
     description:
       'Modelagem, estruturação e gerenciamento de dados relacionais, com foco em integridade, consultas e persistência de informações.',
-    items: ['PostgreSQL', 'SQL'],
+    items: ['PostgreSQL', 'MySQL', 'SQL'],
   },
   {
     id: 'devops',

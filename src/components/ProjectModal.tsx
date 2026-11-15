@@ -135,7 +135,7 @@ export function ProjectModal({ project, index, onClose }: { project: Project | n
                   <RichText value={project.details.solution} />
                 </Block>
                 <Block title="Funcionalidades">
-                  <BulletList items={project.details.features} />
+                  <BulletList items={project.details.features} emphasizeLead />
                 </Block>
                 <Block title="Desafios técnicos">
                   <BulletList items={project.details.challenges} emphasizeLead />

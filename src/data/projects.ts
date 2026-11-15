@@ -31,7 +31,7 @@ export const projectsIntro: SectionIntro = {
 }
 
 /** Modelo genérico — duplique e preencha, ou apague quando não precisar mais. */
-const template = (n: number): Project => ({
+export const template = (n: number): Project => ({
   slug: `projeto-${n}`,
   name: `[NOME DO PROJETO ${n}]`,
   description: '[DESCRIÇÃO DO PROJETO — uma ou duas frases sobre o que ele faz e para quem.]',
@@ -57,7 +57,7 @@ export const projects: Project[] = [
     name: 'DuPorco Alimentos',
     description:
       'Site institucional e catálogo digital para uma empresa de embutidos artesanais, com pedidos via WhatsApp e SEO técnico.',
-    year: '[ANO]',
+    year: '2026',
     category: 'Site institucional',
     cover: '/images/projects/duporco/capa.webp',
     coverPosition: 'left center', // mantém o título do site visível no recorte
@@ -106,7 +106,7 @@ export const projects: Project[] = [
     name: 'DrugInfusion',
     description:
       'Aplicativo mobile que reúne cálculos de dosagem, diluição, concentração e velocidade de infusão de medicamentos intravenosos para profissionais de saúde.',
-    year: '[ANO]',
+    year: '2026',
     category: 'Aplicativo mobile',
     cover: '/images/projects/druginfusion/capa.webp',
     technologies: ['React Native', 'Expo SDK 54', 'TypeScript', 'React 19', 'Expo Router 6', 'Clean Architecture', 'i18n (pt-BR, en-US, es-ES)'],
@@ -117,10 +117,29 @@ export const projects: Project[] = [
         'O DrugInfusion é um aplicativo mobile voltado à área da saúde, desenvolvido para facilitar o acesso a ferramentas de cálculo e informações medicamentosas diretamente pelo smartphone.',
         'O objetivo é oferecer uma experiência prática, intuitiva e organizada, auxiliando profissionais de saúde em atividades que exigem precisão e agilidade.',
       ],
-      problem: '[PROBLEMA IDENTIFICADO — qual dor ou necessidade motivou o projeto.]',
-      solution: '[SOLUÇÃO DESENVOLVIDA — como você resolveu, decisões e arquitetura.]',
-      features: ['[FUNCIONALIDADE 1]', '[FUNCIONALIDADE 2]', '[FUNCIONALIDADE 3]'],
-      challenges: ['[DESAFIO TÉCNICO 1 — e como foi superado]', '[DESAFIO TÉCNICO 2]'],
+      problem: [
+        'Em ambientes como UTIs e emergências, profissionais de saúde precisam converter prescrições de medicamentos em velocidades de infusão (mL/h) para configurar bombas de infusão. Esse processo envolve diferentes unidades de medida, peso do paciente e concentrações das soluções preparadas, tornando os cálculos complexos e suscetíveis a erros.',
+        'Além disso, a necessidade de consultar informações medicamentosas durante atendimentos exige acesso rápido e confiável aos dados, inclusive em ambientes com conectividade limitada.',
+      ],
+      solution: [
+        'Foi desenvolvido um aplicativo mobile utilizando React Native e Expo, com uma arquitetura organizada em camadas inspirada em Clean Architecture, separando regras de negócio, interface, dados e infraestrutura.',
+        'A solução conta com um motor próprio de cálculos, catálogo estruturado de apresentações medicamentosas e mecanismos de sincronização de dados com funcionamento local-first. As regras de negócio foram isoladas em funções independentes da interface, permitindo maior facilidade de manutenção, validação e testes.',
+        'O projeto também contempla autenticação, gerenciamento de assinaturas, internacionalização e mecanismos de persistência local, proporcionando uma aplicação estruturada e preparada para evolução.',
+      ],
+      features: [
+        'Calculadora de infusão: conversão de doses medicamentosas em velocidades de infusão (mL/h), considerando peso, concentração e diferentes unidades de medida, com cálculo inverso de equivalência.',
+        'Preparo de soluções: seleção de apresentações medicamentosas e criação de soluções personalizadas, com cálculo automático da concentração final.',
+        'Validação de doses: verificação de faixas terapêuticas, limites de dose diária, alertas de diluição e consulta de referências medicamentosas.',
+        'Calculadora de intubação: cálculo de volumes de medicamentos utilizados em protocolos de sequência rápida de intubação.',
+        'Catálogo medicamentoso: consulta de informações e apresentações de medicamentos, com sincronização versionada e armazenamento local para acesso sem conexão.',
+        'Gestão de usuários e assinaturas: autenticação, gerenciamento de perfil, recuperação de senha e integração com pagamentos nativos das lojas.',
+      ],
+      challenges: [
+        'Precisão e confiabilidade dos cálculos: migração das regras de cálculo do aplicativo original para funções puras em TypeScript, preservando fórmulas e critérios de arredondamento. Foram implementados testes automatizados de referência e validação, totalizando 1.421 testes distribuídos em 27 suítes.',
+        'Sincronização e integridade dos dados: implementação de um mecanismo de atualização incremental do catálogo medicamentoso, utilizando versionamento, ETag, retomada de downloads, verificação de integridade por SHA-256 e armazenamento local.',
+        'Arquitetura e manutenção: separação das regras de negócio da interface e da infraestrutura, permitindo testar cálculos e validações independentemente do React Native.',
+        'Resiliência e funcionamento offline: implementação de persistência local, atualização otimista e filas de operações pendentes para preservar informações e sincronizá-las quando a conexão for restabelecida.',
+      ],
       gallery: [
         '/images/projects/druginfusion/tela-1.webp', // tela inicial
         '/images/projects/druginfusion/tela-2.webp', // lista de soluções
@@ -131,5 +150,5 @@ export const projects: Project[] = [
   },
 
   // ---- Modelo genérico (substitua ou apague) ----
-  template(3),
+  // template(3),
 ]

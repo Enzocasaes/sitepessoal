@@ -43,7 +43,7 @@ export const experience: ExperienceEntry[] = [
     period: '2024 — 2027 (previsão)',
     location: 'Belo Horizonte, MG',
     description:
-      'Graduação com foco na concepção, desenvolvimento, arquitetura e manutenção de sistemas de software. Formação voltada à aplicação de boas práticas de engenharia, estruturas de dados, banco de dados, testes de software e metodologias ágeis. Durante o curso, desenvolvo projetos práticos que conectam conhecimentos acadêmicos a desafios reais do mercado, explorando principalmente o desenvolvimento Full Stack, com maior interesse em Backend.',
+      'Graduação com foco na concepção, desenvolvimento, arquitetura e manutenção de sistemas de software. Formação voltada à aplicação de boas práticas de engenharia, estruturas de dados, banco de dados, testes de software e metodologias ágeis. Durante o curso, desenvolvo projetos práticos que conectam conhecimentos acadêmicos a desafios reais do mercado, explorando principalmente o desenvolvimento Full Stack.',
     activities: [
       'Desenvolvimento de projetos acadêmicos envolvendo aplicações web e mobile, APIs, integração de sistemas e modelagem de bancos de dados.',
       'Aplicação de conceitos de engenharia de software, arquitetura de sistemas, versionamento de código, testes e metodologias ágeis em projetos colaborativos.',
@@ -65,7 +65,7 @@ export const experience: ExperienceEntry[] = [
   },
   {
     type: 'professional',
-    organization: 'Supernet Telecom',
+    organization: 'ABT Telecom',
     role: 'Técnico em Telecomunicações',
     period: 'Jan 2020 — Jun 2021',
     location: 'Setubinha, MG',

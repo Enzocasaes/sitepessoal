@@ -31,7 +31,7 @@ export const profile = {
   facts: [
     { label: 'Atualmente', value: 'Desenvolvedor Full Stack', detail: 'SmartMedic · desde 2025' },
     { label: 'Formação', value: 'Engenharia de Software', detail: 'PUC Minas · 6º período · previsão 2027' },
-    { label: 'Stack', value: 'React · Java · Node.js', detail: 'TypeScript · Spring Boot · PostgreSQL' },
+    { label: 'Stack', value: 'React · Java · Go · Node.js', detail: 'TypeScript · Spring Boot · Expo · PostgreSQL' },
     { label: 'Local', value: 'Belo Horizonte', detail: 'Minas Gerais, Brasil' },
   ] satisfies Fact[],
 
